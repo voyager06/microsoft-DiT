@@ -1,0 +1,32 @@
+# config.yaml
+# Paths
+source_dir: "./invoices"
+image_dir: "./images"
+pdf_dir: "./pdfs"
+ocr_output: "./ocr_classified"
+train_data_dir: "./dataset"
+model_dir: "./dit-finetuned-docs"
+model_output_dir: "./dit-finetuned-docs"
+segregated_output: "./segregated"
+excel_file: "./PO_DATA.xlsx"
+
+# Ingest settings
+ingest_method: "structured"   # options: structured, alternative, config
+
+# OCR settings
+ocr_recursive: false
+
+# Training settings
+epochs: 10
+lr: 2e-5
+train_bs: 8
+eval_bs: 8
+fp16: false
+no_augment: false
+freeze_backbone: false
+
+# Inference settings
+predictions_csv: "predictions.csv"
+
+# HuggingFace model
+hf_model: "microsoft/dit-base-finetuned-rvlcdip"
